@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 
-const Product = () => {
-  const products = useSelector((state) => state.products)
+const ProductList = () => {
+  const productsList = useSelector((state) => state.products)
 
   return (
-    <>
-    {products.map((product) => {
+    <div className="products-container">
+    {productsList.map((product) => {
       return(
     <div className="product" key={product.id}>
       <div className="product-image">
@@ -26,7 +26,7 @@ const Product = () => {
       </div>
     </div>
   )})}
-  </>
+  </div>
   );
 };
-export default Product;
+export default ProductList;

@@ -1,4 +1,4 @@
-export const productsList = [
+export const productsListApi = [
     {
       "id": 1,
       "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",

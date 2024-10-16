@@ -1,15 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { productsList } from "../../api/productsList";
-
-// const initialState = {
-//   products: productsList,
-//   cartItems: [],
-//   wishList: [],
-// };
+import { productsListApi } from "../../api/productsListApi";
 
 const productsSlice = createSlice({
   name: "products",
-  initialState:productsList,
+  initialState: productsListApi,
   reducer: {
     addProduct: (state, action) => {
       console.log(action);
