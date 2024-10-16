@@ -1,9 +1,9 @@
-import Product from "./components/Product";
+import ProductList from "./components/ProductList";
 import "./App.css";
 
 const App = () => {
-  return <div className="products-container">
-    <Product />
+  return <div >
+    <ProductList />
   </div>;
 };
 
