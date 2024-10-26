@@ -1,12 +1,26 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Product from "../../components/Product";
+import { useEffect } from "react";
+import { fetchProducts } from "../../redux/thunks/fetchProducts";
+import { statusCode } from "../../components/utils/constants";
 
 const Home = () => {
-    const productsList = useSelector((state) => state.products)
+  const dispatch = useDispatch();
+  const { products, status } = useSelector((state) => state.products);
 
-    return (
-      <div className="products-container">
-      {productsList.map(({ id, title, rating, price, image }) => (
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
+ if(status === statusCode.LOADING){
+  return <p>Loading....</p>
+ }
+ if(status === statusCode.ERROR){
+  return <p>Something went wrong! Try again later</p>
+ }
+  return (
+    <div className="products-container">
+      {products.map(({ id, title, rating, price, image }) => (
         <Product
           key={id}
           id={id}
@@ -17,6 +31,6 @@ const Home = () => {
         />
       ))}
     </div>
-    );
+  );
 };
 export default Home;
