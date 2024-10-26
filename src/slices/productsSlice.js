@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { productsListApi } from "../../api/productsListApi";
+import { productsListApi } from "../api/productsListApi";
 
 const productsSlice = createSlice({
   name: "products",
