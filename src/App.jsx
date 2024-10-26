@@ -1,9 +1,11 @@
-import ProductList from "./components/ProductList";
+import Header from "./components/Header";
+import { Outlet } from "react-router-dom";
 import "./App.css";
 
 const App = () => {
   return <div >
-    <ProductList />
+    <Header />
+    <Outlet />
   </div>;
 };
 
