@@ -21,7 +21,7 @@ const cartItemsSlice = createSlice({
     },
   },
 });
-console.log(cartItemsSlice)
+
 export const { addCartItem, removeCartItem, increaseCartItemQuantity, decreaseCartItemQuantity } = cartItemsSlice.actions;
 
 export default cartItemsSlice.reducer;
