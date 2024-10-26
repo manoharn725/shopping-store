@@ -3,8 +3,7 @@ import cartIcon from "../../assets/cart-icon.svg";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  
-  const { cartItems } = useSelector((state) => state);
+  const cartItems  = useSelector((state) => state.cartItems);
 
   return (
     <header>
