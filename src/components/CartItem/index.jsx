@@ -3,7 +3,7 @@ import {
   removeCartItem,
   increaseCartItemQuantity,
   decreaseCartItemQuantity,
-} from "../../redux/slices/cartItemsSlice";
+} from "../../store/slices/cartItemsSlice";
 
 const CartItem = ({ id, title, price, quantity, image, rating }) => {
   const dispatch = useDispatch();

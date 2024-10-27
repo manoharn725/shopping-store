@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import Product from "../../components/Product";
 import { useEffect } from "react";
-import { fetchProducts } from "../../redux/thunks/fetchProducts";
+import { fetchProducts } from "../../store/thunks/fetchProducts";
 import { statusCode } from "../../components/utils/constants";
 
 const Home = () => {
