@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchProducts } from "../thunks/fetchProducts";
-import { statusCode } from "../../components/utils/constants";
 
 const initialState = {
   products: [],
-  status: statusCode.IDLE,
+  isLoading: false,
+  isSuccess: false,
+  isError: false,
 };
 
 const productsSlice = createSlice({
@@ -17,22 +18,22 @@ const productsSlice = createSlice({
     //extraReducers to handle asynchronous task, we can handle PROMISES 3 cases here
     builder
       .addCase(fetchProducts.pending, (state) => {
-        //state.status = 'loading';
-        state.status = statusCode.LOADING;
+        state.isLoading = true;
+        state.isSuccess = false;
+        state.isError = false;
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.products = action.payload;
-        //state.status = 'idle';
-        state.status = statusCode.IDLE;
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.isError = false;
       })
       .addCase(fetchProducts.rejected, (state) => {
-        //state.status = 'error';
-        state.status = statusCode.ERROR;
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.isError = true;
       });
   },
 });
 
-
 export default productsSlice.reducer;
-
-

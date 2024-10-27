@@ -1,5 +1,5 @@
 export const statusCode = {
     LOADING: 'loading',
-    IDLE:'idle',
+    SUCCESS:'success',
     ERROR: 'error',
 }
